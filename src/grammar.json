@@ -23,21 +23,54 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "chord"
+          "name": "content_line"
         },
         {
           "type": "SYMBOL",
-          "name": "lyric"
+          "name": "empty_line"
         }
       ]
     },
-    "chord": {
+    "content_line": {
+      "type": "REPEAT1",
+      "content": {
+        "type": "CHOICE",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "chord"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "lyric"
+          }
+        ]
+      }
+    },
+    "empty_line": {
       "type": "PATTERN",
-      "value": "[^\\]]+"
+      "value": "\\s*"
+    },
+    "chord": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "["
+        },
+        {
+          "type": "PATTERN",
+          "value": "[^\\]]+"
+        },
+        {
+          "type": "STRING",
+          "value": "]"
+        }
+      ]
     },
     "lyric": {
       "type": "PATTERN",
-      "value": "[^\\[]+"
+      "value": "[^\\[\\n]+"
     },
     "directive": {
       "type": "CHOICE",
@@ -3573,7 +3606,11 @@
       "value": "\\s"
     }
   ],
-  "conflicts": [],
+  "conflicts": [
+    [
+      "content_line"
+    ]
+  ],
   "precedences": [],
   "externals": [],
   "inline": [],

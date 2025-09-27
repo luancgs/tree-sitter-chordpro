@@ -27,15 +27,24 @@ function default_directive_with_alias($, names, value) {
 
 module.exports = grammar({
   name: "chordpro",
+  
+  conflicts: $ => [
+    [$.content_line]
+  ],
 
   rules: {
     song: ($) => repeat(choice($.directive, $.song_line)),
 
-    song_line: ($) => choice($.chord, $.lyric),
+    song_line: ($) => choice(
+      $.content_line,
+      $.empty_line
+    ),
+    
+    content_line: ($) => repeat1(choice($.chord, $.lyric)),
+    empty_line: ($) => /\s*/,
 
-    chord: ($) => /[^\]]+/,
-
-    lyric: ($) => /[^\[]+/,
+    chord: ($) => seq("[", /[^\]]+/, "]"),
+    lyric: ($) => /[^\[\n]+/,
 
     directive: ($) =>
       choice(

@@ -57,6 +57,11 @@
     }
   },
   {
+    "type": "chord",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "chord_directive",
     "named": true,
     "fields": {},
@@ -315,6 +320,25 @@
         },
         {
           "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "content_line",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "chord",
+          "named": true
+        },
+        {
+          "type": "lyric",
           "named": true
         }
       ]
@@ -1110,11 +1134,11 @@
       "required": true,
       "types": [
         {
-          "type": "chord",
+          "type": "content_line",
           "named": true
         },
         {
-          "type": "lyric",
+          "type": "empty_line",
           "named": true
         }
       ]
@@ -1648,6 +1672,14 @@
     "named": false
   },
   {
+    "type": "[",
+    "named": false
+  },
+  {
+    "type": "]",
+    "named": false
+  },
+  {
     "type": "album",
     "named": false
   },
@@ -1670,10 +1702,6 @@
   {
     "type": "cb",
     "named": false
-  },
-  {
-    "type": "chord",
-    "named": true
   },
   {
     "type": "chord",
@@ -1774,6 +1802,10 @@
   {
     "type": "duration",
     "named": false
+  },
+  {
+    "type": "empty_line",
+    "named": true
   },
   {
     "type": "end_of_abc",
