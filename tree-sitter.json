@@ -1,0 +1,42 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "chordpro",
+      "camelcase": "ChordPro",
+      "title": "ChordPro",
+      "scope": "source.chordpro",
+      "file-types": [
+        "chordpro",
+        "cho",
+        "crd"
+      ],
+      "injection-regex": "^chordpro$",
+      "class-name": "TreeSitterChordpro"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "Grammar for ChordPro specification",
+    "authors": [
+      {
+        "name": "Luan Carlos",
+        "email": "luancgs.dev@pm.me",
+        "url": "https://github.com/luancgs"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/luancgs/tree-sitter-chordpro"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true,
+    "zig": false
+  }
+}
