@@ -1,0 +1,2127 @@
+[
+  {
+    "type": "album_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "artist_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "capo_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "chord_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "chord_name",
+          "named": true
+        },
+        {
+          "type": "finger_sequence",
+          "named": true
+        },
+        {
+          "type": "fret_number",
+          "named": true
+        },
+        {
+          "type": "fret_sequence",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "chordcolour_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "chordfont_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "chordsize_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "chorus_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "choruscolour_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "chorusfont_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "chorussize_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "column_break_directive",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "columns_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "comment_box_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "comment_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "comment_italic_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "composer_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "copyright_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "define_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "chord_name",
+          "named": true
+        },
+        {
+          "type": "finger_sequence",
+          "named": true
+        },
+        {
+          "type": "fret_number",
+          "named": true
+        },
+        {
+          "type": "fret_sequence",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "diagrams_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "album_directive",
+          "named": true
+        },
+        {
+          "type": "artist_directive",
+          "named": true
+        },
+        {
+          "type": "capo_directive",
+          "named": true
+        },
+        {
+          "type": "chord_directive",
+          "named": true
+        },
+        {
+          "type": "chordcolour_directive",
+          "named": true
+        },
+        {
+          "type": "chordfont_directive",
+          "named": true
+        },
+        {
+          "type": "chordsize_directive",
+          "named": true
+        },
+        {
+          "type": "chorus_directive",
+          "named": true
+        },
+        {
+          "type": "choruscolour_directive",
+          "named": true
+        },
+        {
+          "type": "chorusfont_directive",
+          "named": true
+        },
+        {
+          "type": "chorussize_directive",
+          "named": true
+        },
+        {
+          "type": "column_break_directive",
+          "named": true
+        },
+        {
+          "type": "columns_directive",
+          "named": true
+        },
+        {
+          "type": "comment_box_directive",
+          "named": true
+        },
+        {
+          "type": "comment_directive",
+          "named": true
+        },
+        {
+          "type": "comment_italic_directive",
+          "named": true
+        },
+        {
+          "type": "composer_directive",
+          "named": true
+        },
+        {
+          "type": "copyright_directive",
+          "named": true
+        },
+        {
+          "type": "define_directive",
+          "named": true
+        },
+        {
+          "type": "diagrams_directive",
+          "named": true
+        },
+        {
+          "type": "duration_directive",
+          "named": true
+        },
+        {
+          "type": "end_of_abc_directive",
+          "named": true
+        },
+        {
+          "type": "end_of_bridge_directive",
+          "named": true
+        },
+        {
+          "type": "end_of_chorus_directive",
+          "named": true
+        },
+        {
+          "type": "end_of_grid_directive",
+          "named": true
+        },
+        {
+          "type": "end_of_ly_directive",
+          "named": true
+        },
+        {
+          "type": "end_of_svg_directive",
+          "named": true
+        },
+        {
+          "type": "end_of_tab_directive",
+          "named": true
+        },
+        {
+          "type": "end_of_textblock_directive",
+          "named": true
+        },
+        {
+          "type": "end_of_verse_directive",
+          "named": true
+        },
+        {
+          "type": "footercolour_directive",
+          "named": true
+        },
+        {
+          "type": "footerfont_directive",
+          "named": true
+        },
+        {
+          "type": "footersize_directive",
+          "named": true
+        },
+        {
+          "type": "grid_directive",
+          "named": true
+        },
+        {
+          "type": "gridcolour_directive",
+          "named": true
+        },
+        {
+          "type": "gridfont_directive",
+          "named": true
+        },
+        {
+          "type": "gridsize_directive",
+          "named": true
+        },
+        {
+          "type": "highlight_directive",
+          "named": true
+        },
+        {
+          "type": "image_directive",
+          "named": true
+        },
+        {
+          "type": "key_directive",
+          "named": true
+        },
+        {
+          "type": "labelcolour_directive",
+          "named": true
+        },
+        {
+          "type": "labelfont_directive",
+          "named": true
+        },
+        {
+          "type": "labelsize_directive",
+          "named": true
+        },
+        {
+          "type": "lyricist_directive",
+          "named": true
+        },
+        {
+          "type": "meta_directive",
+          "named": true
+        },
+        {
+          "type": "new_page_directive",
+          "named": true
+        },
+        {
+          "type": "new_physic_page_directive",
+          "named": true
+        },
+        {
+          "type": "no_grid_directive",
+          "named": true
+        },
+        {
+          "type": "pagetype_directive",
+          "named": true
+        },
+        {
+          "type": "start_of_abc_directive",
+          "named": true
+        },
+        {
+          "type": "start_of_bridge_directive",
+          "named": true
+        },
+        {
+          "type": "start_of_chorus_directive",
+          "named": true
+        },
+        {
+          "type": "start_of_grid_directive",
+          "named": true
+        },
+        {
+          "type": "start_of_ly_directive",
+          "named": true
+        },
+        {
+          "type": "start_of_svg_directive",
+          "named": true
+        },
+        {
+          "type": "start_of_tab_directive",
+          "named": true
+        },
+        {
+          "type": "start_of_textblock_directive",
+          "named": true
+        },
+        {
+          "type": "start_of_verse_directive",
+          "named": true
+        },
+        {
+          "type": "subtitle_directive",
+          "named": true
+        },
+        {
+          "type": "tabcolour_directive",
+          "named": true
+        },
+        {
+          "type": "tabfont_directive",
+          "named": true
+        },
+        {
+          "type": "tabsize_directive",
+          "named": true
+        },
+        {
+          "type": "tag_directive",
+          "named": true
+        },
+        {
+          "type": "tempo_directive",
+          "named": true
+        },
+        {
+          "type": "textcolour_directive",
+          "named": true
+        },
+        {
+          "type": "textfont_directive",
+          "named": true
+        },
+        {
+          "type": "textsize_directive",
+          "named": true
+        },
+        {
+          "type": "time_directive",
+          "named": true
+        },
+        {
+          "type": "title_directive",
+          "named": true
+        },
+        {
+          "type": "titlecolour_directive",
+          "named": true
+        },
+        {
+          "type": "titlefont_directive",
+          "named": true
+        },
+        {
+          "type": "titles_directive",
+          "named": true
+        },
+        {
+          "type": "titlesize_directive",
+          "named": true
+        },
+        {
+          "type": "toccolour_directive",
+          "named": true
+        },
+        {
+          "type": "tocfont_directive",
+          "named": true
+        },
+        {
+          "type": "tocsize_directive",
+          "named": true
+        },
+        {
+          "type": "transpose_directive",
+          "named": true
+        },
+        {
+          "type": "year_directive",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "duration_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "end_of_abc_directive",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "end_of_bridge_directive",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "end_of_chorus_directive",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "end_of_grid_directive",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "end_of_ly_directive",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "end_of_svg_directive",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "end_of_tab_directive",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "end_of_textblock_directive",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "end_of_verse_directive",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "footercolour_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "footerfont_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "footersize_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "grid_directive",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "gridcolour_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "gridfont_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "gridsize_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "highlight_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "image_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "key_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "labelcolour_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "labelfont_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "labelsize_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "lyricist_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "meta_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "new_page_directive",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "new_physic_page_directive",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "no_grid_directive",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "pagetype_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "song",
+    "named": true,
+    "root": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "directive",
+          "named": true
+        },
+        {
+          "type": "song_line",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "song_line",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "chord",
+          "named": true
+        },
+        {
+          "type": "lyric",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "start_of_abc_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "start_of_bridge_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "start_of_chorus_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "start_of_grid_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "start_of_ly_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "start_of_svg_directive",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "start_of_tab_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "start_of_textblock_directive",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "start_of_verse_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "subtitle_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "tabcolour_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "tabfont_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "tabsize_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "tag_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "tempo_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "textcolour_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "textfont_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "textsize_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "time_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "title_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "titlecolour_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "titlefont_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "titles_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "titlesize_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "toccolour_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "tocfont_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "tocsize_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "transpose_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "year_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "directive_arguments",
+          "named": true
+        },
+        {
+          "type": "space",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": ":",
+    "named": false
+  },
+  {
+    "type": "album",
+    "named": false
+  },
+  {
+    "type": "artist",
+    "named": false
+  },
+  {
+    "type": "base-fret",
+    "named": false
+  },
+  {
+    "type": "c",
+    "named": false
+  },
+  {
+    "type": "capo",
+    "named": false
+  },
+  {
+    "type": "cb",
+    "named": false
+  },
+  {
+    "type": "chord",
+    "named": true
+  },
+  {
+    "type": "chord",
+    "named": false
+  },
+  {
+    "type": "chord_name",
+    "named": true
+  },
+  {
+    "type": "chordcolor",
+    "named": false
+  },
+  {
+    "type": "chordcolour",
+    "named": false
+  },
+  {
+    "type": "chordfont",
+    "named": false
+  },
+  {
+    "type": "chordsize",
+    "named": false
+  },
+  {
+    "type": "chorus",
+    "named": false
+  },
+  {
+    "type": "choruscolor",
+    "named": false
+  },
+  {
+    "type": "choruscolour",
+    "named": false
+  },
+  {
+    "type": "chorusfont",
+    "named": false
+  },
+  {
+    "type": "chorussize",
+    "named": false
+  },
+  {
+    "type": "ci",
+    "named": false
+  },
+  {
+    "type": "col",
+    "named": false
+  },
+  {
+    "type": "colb",
+    "named": false
+  },
+  {
+    "type": "column_break",
+    "named": false
+  },
+  {
+    "type": "columns",
+    "named": false
+  },
+  {
+    "type": "comment",
+    "named": false
+  },
+  {
+    "type": "comment_box",
+    "named": false
+  },
+  {
+    "type": "comment_italic",
+    "named": false
+  },
+  {
+    "type": "composer",
+    "named": false
+  },
+  {
+    "type": "copyright",
+    "named": false
+  },
+  {
+    "type": "define",
+    "named": false
+  },
+  {
+    "type": "diagrams",
+    "named": false
+  },
+  {
+    "type": "directive_arguments",
+    "named": true
+  },
+  {
+    "type": "duration",
+    "named": false
+  },
+  {
+    "type": "end_of_abc",
+    "named": false
+  },
+  {
+    "type": "end_of_bridge",
+    "named": false
+  },
+  {
+    "type": "end_of_chorus",
+    "named": false
+  },
+  {
+    "type": "end_of_grid",
+    "named": false
+  },
+  {
+    "type": "end_of_ly",
+    "named": false
+  },
+  {
+    "type": "end_of_svg",
+    "named": false
+  },
+  {
+    "type": "end_of_tab",
+    "named": false
+  },
+  {
+    "type": "end_of_textblock",
+    "named": false
+  },
+  {
+    "type": "end_of_verse",
+    "named": false
+  },
+  {
+    "type": "eob",
+    "named": false
+  },
+  {
+    "type": "eoc",
+    "named": false
+  },
+  {
+    "type": "eog",
+    "named": false
+  },
+  {
+    "type": "eot",
+    "named": false
+  },
+  {
+    "type": "eov",
+    "named": false
+  },
+  {
+    "type": "finger_sequence",
+    "named": true
+  },
+  {
+    "type": "fingers",
+    "named": false
+  },
+  {
+    "type": "footercolor",
+    "named": false
+  },
+  {
+    "type": "footercolour",
+    "named": false
+  },
+  {
+    "type": "footerfont",
+    "named": false
+  },
+  {
+    "type": "footersize",
+    "named": false
+  },
+  {
+    "type": "fret_number",
+    "named": true
+  },
+  {
+    "type": "fret_sequence",
+    "named": true
+  },
+  {
+    "type": "frets",
+    "named": false
+  },
+  {
+    "type": "grid",
+    "named": false
+  },
+  {
+    "type": "gridcolor",
+    "named": false
+  },
+  {
+    "type": "gridcolour",
+    "named": false
+  },
+  {
+    "type": "gridfont",
+    "named": false
+  },
+  {
+    "type": "gridsize",
+    "named": false
+  },
+  {
+    "type": "highlight",
+    "named": false
+  },
+  {
+    "type": "image",
+    "named": false
+  },
+  {
+    "type": "key",
+    "named": false
+  },
+  {
+    "type": "labelcolor",
+    "named": false
+  },
+  {
+    "type": "labelcolour",
+    "named": false
+  },
+  {
+    "type": "labelfont",
+    "named": false
+  },
+  {
+    "type": "labelsize",
+    "named": false
+  },
+  {
+    "type": "lyric",
+    "named": true
+  },
+  {
+    "type": "lyricist",
+    "named": false
+  },
+  {
+    "type": "meta",
+    "named": false
+  },
+  {
+    "type": "new_page",
+    "named": false
+  },
+  {
+    "type": "new_physical_page",
+    "named": false
+  },
+  {
+    "type": "no_grid",
+    "named": false
+  },
+  {
+    "type": "np",
+    "named": false
+  },
+  {
+    "type": "npp",
+    "named": false
+  },
+  {
+    "type": "pagetype",
+    "named": false
+  },
+  {
+    "type": "sob",
+    "named": false
+  },
+  {
+    "type": "soc",
+    "named": false
+  },
+  {
+    "type": "sog",
+    "named": false
+  },
+  {
+    "type": "sot",
+    "named": false
+  },
+  {
+    "type": "sov",
+    "named": false
+  },
+  {
+    "type": "space",
+    "named": true,
+    "extra": true
+  },
+  {
+    "type": "st",
+    "named": false
+  },
+  {
+    "type": "start_of_abc",
+    "named": false
+  },
+  {
+    "type": "start_of_bridge",
+    "named": false
+  },
+  {
+    "type": "start_of_chorus",
+    "named": false
+  },
+  {
+    "type": "start_of_grid",
+    "named": false
+  },
+  {
+    "type": "start_of_ly",
+    "named": false
+  },
+  {
+    "type": "start_of_svg",
+    "named": false
+  },
+  {
+    "type": "start_of_tab",
+    "named": false
+  },
+  {
+    "type": "start_of_textblock",
+    "named": false
+  },
+  {
+    "type": "start_of_verse",
+    "named": false
+  },
+  {
+    "type": "subtitle",
+    "named": false
+  },
+  {
+    "type": "t",
+    "named": false
+  },
+  {
+    "type": "tabcolor",
+    "named": false
+  },
+  {
+    "type": "tabcolour",
+    "named": false
+  },
+  {
+    "type": "tabfont",
+    "named": false
+  },
+  {
+    "type": "tabsize",
+    "named": false
+  },
+  {
+    "type": "tag",
+    "named": false
+  },
+  {
+    "type": "tempo",
+    "named": false
+  },
+  {
+    "type": "textcolor",
+    "named": false
+  },
+  {
+    "type": "textcolour",
+    "named": false
+  },
+  {
+    "type": "textfont",
+    "named": false
+  },
+  {
+    "type": "textsize",
+    "named": false
+  },
+  {
+    "type": "time",
+    "named": false
+  },
+  {
+    "type": "title",
+    "named": false
+  },
+  {
+    "type": "titlecolor",
+    "named": false
+  },
+  {
+    "type": "titlecolour",
+    "named": false
+  },
+  {
+    "type": "titlefont",
+    "named": false
+  },
+  {
+    "type": "titles",
+    "named": false
+  },
+  {
+    "type": "titlesize",
+    "named": false
+  },
+  {
+    "type": "toccolor",
+    "named": false
+  },
+  {
+    "type": "toccolour",
+    "named": false
+  },
+  {
+    "type": "tocfont",
+    "named": false
+  },
+  {
+    "type": "tocsize",
+    "named": false
+  },
+  {
+    "type": "transpose",
+    "named": false
+  },
+  {
+    "type": "year",
+    "named": false
+  },
+  {
+    "type": "{",
+    "named": false
+  },
+  {
+    "type": "}",
+    "named": false
+  }
+]
