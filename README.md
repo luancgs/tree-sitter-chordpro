@@ -77,5 +77,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## References
 
+- [odelljl's ChordPro Parser](https://github.com/odelljl/tree-sitter-chordpro)
 - [ChordPro Directives](https://www.chordpro.org/chordpro/chordpro-directives/)
 - [Tree-sitter Documentation](https://tree-sitter.github.io/tree-sitter/creating-parsers/)
