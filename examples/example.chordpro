@@ -1,0 +1,51 @@
+{title: This is My Father's World}
+{artist: Traditional}
+{composer: Maltbie D. Babcock}
+{year: 1901}
+{key: G}
+
+{columns: 2}
+
+{define: B/D# base-fret 1 frets x x 1 4 0 2 fingers 0 0 1 4 0 2}
+
+{comment: Intro}
+[C] [D] [G]
+
+{start_of_verse: Verse 1}
+This [G]is my [D]Father's [G]world,
+and [C]to my [G]listening [D]ears
+all [G]nature si[D]ngs, and [B/D#]round me [Em]rings
+the [C]music o[D]f the s[G]pheres.
+This [G]is my [C]Fath[D]er's [G]world,
+I r[C]est me [D]in the [G]thought
+of [G]rocks and [Em]trees, of [C]skies [D]and [G]seas;
+his [C]hand the [D]wonders [G]wrought.
+{end_of_verse}
+
+{comment: Instrumental}
+[C] [D] [G]
+
+{start_of_verse: Verse 2}
+This [G]is my [D]Father's [G]world,
+the [C]birds their [G]carols [D]raise,
+the [G]morning l[D]ight, the[B/D#] lily [Em]white,
+de[C]clare their [D]maker's p[G]raise.
+This [G]is my [C]Fath[D]er's [G]world:
+He [C]shines in [D]all that's [G]fair,
+in [G]the [Em]rustling grass I [C]hear [D]Him [G]pass,
+He [C]speaks to [D]me e[G]verywhere.
+{end_of_verse}
+
+{comment: Instrumental}
+[C] [D] [G]
+
+{start_of_verse: Verse 3}
+This [G]is my [D]Father's [G]world.
+O [C]let me [G]ne'er [D]forget
+that [G]though the w[D]rong seems [B/D#]oft so [Em]strong,
+God [C]is the [D]ruler [G]yet.
+This [G]is my [C]Fath[D]er's [G]world:
+the [C]battle [D]is not [G]done:
+Je[G]sus Who [Em]died shall be [C]sa--[D]tis[G]fied,
+And [C]earth and [D]Heav’n be [G]one.
+{end_of_verse}
