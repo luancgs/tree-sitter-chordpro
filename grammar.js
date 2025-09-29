@@ -1,5 +1,5 @@
 /**
- * @file Grammar for ChordPro specification
+ * @file Grammar for ChordPro specification - Optimized for performance
  * @author Luan Carlos <luancgs.dev@pm.me>
  * @license MIT
  */
@@ -11,319 +11,346 @@
  * This grammar is based on the ChordPro specification version 6.070
  * For more information, please refer to the official documentation:
  * https://www.chordpro.org/chordpro/chordpro-directives/
+ *
+ * Optimized for performance and robustness:
+ * - Bounded text matching to prevent OOM
+ * - Error recovery for incomplete constructs
+ * - Reduced backtracking potential
+ * - Line-based parsing boundaries
  */
 
 module.exports = grammar({
   name: "chordpro",
 
-  conflicts: ($) => [
-    [$.content_line]
-  ],
+  extras: ($) => [/[ \t]/],
 
   rules: {
-    song: ($) => repeat(choice($.directive, $.song_line)),
+    song: ($) => repeat($.line),
 
-    song_line: ($) => choice($.content_line, $.empty_line),
+    line: ($) => choice(seq($.content, /\r?\n/), /\r?\n/),
 
-    content_line: ($) => repeat1(choice($.chord, $.lyric)),
-    empty_line: ($) => /\r?\n/,
+    content: ($) => choice($.directive, $.song_content),
 
-    chord: ($) => seq("[", /[^\]]+/, "]"),
-    lyric: ($) => /[^{}\[\r\n]+/,
+    song_content: ($) => repeat1(choice($.chord, $.text_segment)),
 
-    directive: ($) => choice(
-      $.title_directive,
-      $.subtitle_directive,
-      $.artist_directive,
-      $.composer_directive,
-      $.lyricist_directive,
-      $.copyright_directive,
-      $.album_directive,
-      $.year_directive,
-      $.key_directive,
-      $.time_directive,
-      $.tempo_directive,
-      $.duration_directive,
-      $.capo_directive,
-      $.tag_directive,
-      $.meta_directive,
+    chord: ($) =>
+      choice(seq("[", optional($.chord_content), "]"), $.incomplete_chord),
 
-      $.comment_directive,
-      $.highlight_directive,
-      $.comment_italic_directive,
-      $.comment_box_directive,
-      $.image_directive,
+    chord_content: ($) => token(prec(1, /[^\]\r\n]{1,8}/)),
+    incomplete_chord: ($) => seq("[", token(prec(-1, /[^\]\r\n]{0,8}/))),
 
-      $.chorus_directive,
-      $.start_of_chorus_directive,
-      $.end_of_chorus_directive,
-      $.start_of_verse_directive,
-      $.end_of_verse_directive,
-      $.start_of_bridge_directive,
-      $.end_of_bridge_directive,
-      $.start_of_tab_directive,
-      $.end_of_tab_directive,
-      $.start_of_grid_directive,
-      $.end_of_grid_directive,
+    text_segment: ($) => token(prec(1, /[^{}\[\r\n]+/)),
 
-      $.start_of_abc_directive,
-      $.end_of_abc_directive,
-      $.start_of_ly_directive,
-      $.end_of_ly_directive,
-      $.start_of_svg_directive,
-      $.end_of_svg_directive,
-      $.start_of_textblock_directive,
-      $.end_of_textblock_directive,
+    directive: ($) => choice($.complete_directive, $.incomplete_directive),
 
-      $.define_directive,
-      $.chord_directive,
+    complete_directive: ($) =>
+      seq(
+        "{",
+        choice(
+          $.title_directive,
+          $.subtitle_directive,
+          $.artist_directive,
+          $.composer_directive,
+          $.lyricist_directive,
+          $.copyright_directive,
+          $.album_directive,
+          $.year_directive,
+          $.key_directive,
+          $.time_directive,
+          $.tempo_directive,
+          $.duration_directive,
+          $.capo_directive,
+          $.tag_directive,
+          $.meta_directive,
 
-      $.transpose_directive,
+          $.comment_directive,
+          $.highlight_directive,
+          $.comment_italic_directive,
+          $.comment_box_directive,
+          $.image_directive,
 
-      $.chordfont_directive,
-      $.chordsize_directive,
-      $.chordcolour_directive,
-      $.chorusfont_directive,
-      $.chorussize_directive,
-      $.choruscolour_directive,
-      $.footerfont_directive,
-      $.footersize_directive,
-      $.footercolour_directive,
-      $.gridfont_directive,
-      $.gridsize_directive,
-      $.gridcolour_directive,
-      $.tabfont_directive,
-      $.tabsize_directive,
-      $.tabcolour_directive,
-      $.labelfont_directive,
-      $.labelsize_directive,
-      $.labelcolour_directive,
-      $.tocfont_directive,
-      $.tocsize_directive,
-      $.toccolour_directive,
-      $.textfont_directive,
-      $.textsize_directive,
-      $.textcolour_directive,
-      $.titlefont_directive,
-      $.titlesize_directive,
-      $.titlecolour_directive,
+          $.chorus_directive,
+          $.start_of_chorus_directive,
+          $.end_of_chorus_directive,
+          $.start_of_verse_directive,
+          $.end_of_verse_directive,
+          $.start_of_bridge_directive,
+          $.end_of_bridge_directive,
+          $.start_of_tab_directive,
+          $.end_of_tab_directive,
+          $.start_of_grid_directive,
+          $.end_of_grid_directive,
 
-      $.new_page_directive,
-      $.new_physic_page_directive,
-      $.column_break_directive,
-      $.pagetype_directive,
+          $.start_of_abc_directive,
+          $.end_of_abc_directive,
+          $.start_of_ly_directive,
+          $.end_of_ly_directive,
+          $.start_of_svg_directive,
+          $.end_of_svg_directive,
+          $.start_of_textblock_directive,
+          $.end_of_textblock_directive,
 
-      $.diagrams_directive,
-      $.grid_directive,
-      $.no_grid_directive,
-      $.titles_directive,
-      $.columns_directive,
-    ),
+          $.define_directive,
+          $.chord_directive,
 
-    title_directive: ($) => choice(
-      seq("{", "title", ":", $.space, $.text, "}"),
-      seq("{", "t", ":", $.space, $.text, "}"),
-    ),
-    subtitle_directive: ($) => choice(
-      seq("{", "subtitle", ":", $.space, $.text, "}"),
-      seq("{", "st", ":", $.space, $.text, "}"),
-    ),
-    artist_directive: ($) => seq("{", "artist", ":", $.space, $.text, "}"),
-    composer_directive: ($) => seq("{", "composer", ":", $.space, $.text, "}"),
-    lyricist_directive: ($) => seq("{", "lyricist", ":", $.space, $.text, "}"),
-    copyright_directive: ($) => seq("{", "copyright", ":", $.space, $.text, "}"),
-    album_directive: ($) => seq("{", "album", ":", $.space, $.text, "}"),
-    year_directive: ($) => seq("{", "year", ":", $.space, $.number, "}"),
-    key_directive: ($) => seq("{", "key", ":", $.space, $.text, "}"),
-    time_directive: ($) => seq("{", "time", ":", $.space, $.text, "}"),
-    tempo_directive: ($) => seq("{", "tempo", ":", $.space, $.text, "}"),
-    duration_directive: ($) => choice(
-      seq("{", "duration", ":", $.space, $.text, "}"),
-      seq("{", "duration", ":", $.space, $.number, "}"),
-    ),
-    capo_directive: ($) => seq("{", "capo", ":", $.space, $.number, "}"),
-    tag_directive: ($) => seq("{", "tag", ":", $.space, $.text, "}"),
-    meta_directive: ($) => seq("{", "meta", ":", $.space, $.text, "}"),
+          $.transpose_directive,
 
-    comment_directive: ($) => choice(
-      seq("{", "comment", ":", $.space, $.text, "}"),
-      seq("{", "c", ":", $.space, $.text, "}"),
-    ),
-    highlight_directive: ($) => seq("{", "highlight", ":", $.space, $.text, "}"),
-    comment_italic_directive: ($) => choice(
-      seq("{", "comment_italic", ":", $.space, $.text, "}"),
-      seq("{", "ci", ":", $.space, $.text, "}"),
-    ),
-    comment_box_directive: ($) => choice(
-      seq("{", "comment_box", ":", $.space, $.text, "}"),
-      seq("{", "cb", ":", $.space, $.text, "}"),
-    ),
-    image_directive: ($) => seq("{", "image", ":", $.space, $.text, "}"),
+          $.chordfont_directive,
+          $.chordsize_directive,
+          $.chordcolour_directive,
+          $.chorusfont_directive,
+          $.chorussize_directive,
+          $.choruscolour_directive,
+          $.footerfont_directive,
+          $.footersize_directive,
+          $.footercolour_directive,
+          $.gridfont_directive,
+          $.gridsize_directive,
+          $.gridcolour_directive,
+          $.tabfont_directive,
+          $.tabsize_directive,
+          $.tabcolour_directive,
+          $.labelfont_directive,
+          $.labelsize_directive,
+          $.labelcolour_directive,
+          $.tocfont_directive,
+          $.tocsize_directive,
+          $.toccolour_directive,
+          $.textfont_directive,
+          $.textsize_directive,
+          $.textcolour_directive,
+          $.titlefont_directive,
+          $.titlesize_directive,
+          $.titlecolour_directive,
 
-    chorus_directive: ($) => choice(
-      seq("{", "chorus", "}"),
-      seq("{", "chorus", ":", $.space, $.text, "}"),
-    ),
-    start_of_chorus_directive: ($) => choice(
-      seq("{", "start_of_chorus", "}"),
-      seq("{", "start_of_chorus", ":", $.space, $.text, "}"),
-      seq("{", "soc", "}"),
-      seq("{", "soc", ":", $.space, $.text, "}"),
-    ),
-    end_of_chorus_directive: ($) => choice(
-      seq("{", "end_of_chorus", "}"),
-      seq("{", "eoc", "}"),
-    ),
-    start_of_verse_directive: ($) => choice(
-      seq("{", "start_of_verse", "}"),
-      seq("{", "start_of_verse", ":", $.space, $.text, "}"),
-      seq("{", "sov", "}"),
-      seq("{", "sov", ":", $.space, $.text, "}"),
-    ),
-    end_of_verse_directive: ($) => choice(
-      seq("{", "end_of_verse", "}"),
-      seq("{", "eov", "}"),
-    ),
-    start_of_bridge_directive: ($) => choice(
-      seq("{", "start_of_bridge", "}"),
-      seq("{", "start_of_bridge", ":", $.space, $.text, "}"),
-      seq("{", "sob", "}"),
-      seq("{", "sob", ":", $.space, $.text, "}"),
-    ),
-    end_of_bridge_directive: ($) => choice(
-      seq("{", "end_of_bridge", "}"),
-      seq("{", "eob", "}"),
-    ),
-    start_of_tab_directive: ($) => choice(
-      seq("{", "start_of_tab", "}"),
-      seq("{", "start_of_tab", ":", $.space, $.text, "}"),
-      seq("{", "sot", "}"),
-      seq("{", "sot", ":", $.space, $.text, "}"),
-    ),
-    end_of_tab_directive: ($) => choice(
-      seq("{", "end_of_tab", "}"),
-      seq("{", "eot", "}"),
-    ),
-    start_of_grid_directive: ($) => choice(
-      seq("{", "start_of_grid", "}"),
-      seq("{", "start_of_grid", ":", $.space, $.text, "}"),
-      seq("{", "sog", "}"),
-      seq("{", "sog", ":", $.space, $.text, "}"),
-    ),
-    end_of_grid_directive: ($) => choice(
-      seq("{", "end_of_grid", "}"),
-      seq("{", "eog", "}"),
-    ),
+          $.new_page_directive,
+          $.new_physic_page_directive,
+          $.column_break_directive,
+          $.pagetype_directive,
 
-    start_of_abc_directive: ($) => choice(
-      seq("{", "start_of_abc", "}"),
-      seq("{", "start_of_abc", ":", $.space, $.text, "}"),
-    ),
-    end_of_abc_directive: ($) => seq("{", "end_of_abc", "}"),
-    start_of_ly_directive: ($) => choice(
-      seq("{", "start_of_ly", "}"),
-      seq("{", "start_of_ly", ":", $.space, $.text, "}"),
-    ),
-    end_of_ly_directive: ($) => seq("{", "end_of_ly", "}"),
-    start_of_svg_directive: ($) => seq("{", "start_of_svg", "}"),
-    end_of_svg_directive: ($) => seq("{", "end_of_svg", "}"),
-    start_of_textblock_directive: ($) => seq("{", "start_of_textblock", "}"),
-    end_of_textblock_directive: ($) => seq("{", "end_of_textblock", "}"),
-
-    define_directive: ($) => seq("{", "define", ":", $.space, $.chord_name, $.space, "base-fret", $.space, $.number, $.space, "frets", $.space, $.fret_sequence, optional(seq($.space, "fingers", $.space, $.finger_sequence)), "}"),
-    chord_directive: ($) => choice(
-      seq( "{", "chord", ":", $.space, $.chord_name, $.space, "base-fret", $.space, $.number, $.space, "frets", $.space, $.fret_sequence, optional(seq($.space, "fingers", $.space, $.finger_sequence)), "}"),
-      seq("{", "chord", ":", $.space, $.chord_name, "}"),
-    ),
-
-    transpose_directive: ($) => seq("{", "transpose", ":", $.space, $.text, "}"),
-
-    chordfont_directive: ($) => seq("{", "chordfont", ":", $.space, $.text, "}"),
-    chordsize_directive: ($) => seq("{", "chordsize", ":", $.space, $.number, "}"),
-    chordcolour_directive: ($) => choice(
-      seq("{", "chordcolour", ":", $.space, $.text, "}"),
-      seq("{", "chordcolor", ":", $.space, $.text, "}"),
-    ),
-    chorusfont_directive: ($) => seq("{", "chorusfont", ":", $.space, $.text, "}"),
-    chorussize_directive: ($) => seq("{", "chorussize", ":", $.space, $.number, "}"),
-    choruscolour_directive: ($) => choice(
-      seq("{", "choruscolour", ":", $.space, $.text, "}"),
-      seq("{", "choruscolor", ":", $.space, $.text, "}"),
-    ),
-    footerfont_directive: ($) => seq("{", "footerfont", ":", $.space, $.text, "}"),
-    footersize_directive: ($) => seq("{", "footersize", ":", $.space, $.number, "}"),
-    footercolour_directive: ($) => choice(
-      seq("{", "footercolour", ":", $.space, $.text, "}"),
-      seq("{", "footercolor", ":", $.space, $.text, "}"),
-    ),
-    gridfont_directive: ($) => seq("{", "gridfont", ":", $.space, $.text, "}"),
-    gridsize_directive: ($) => seq("{", "gridsize", ":", $.space, $.number, "}"),
-    gridcolour_directive: ($) => choice(
-      seq("{", "gridcolour", ":", $.space, $.text, "}"),
-      seq("{", "gridcolor", ":", $.space, $.text, "}"),
-    ),
-    tabfont_directive: ($) => seq("{", "tabfont", ":", $.space, $.text, "}"),
-    tabsize_directive: ($) => seq("{", "tabsize", ":", $.space, $.number, "}"),
-    tabcolour_directive: ($) => choice(
-      seq("{", "tabcolour", ":", $.space, $.text, "}"),
-      seq("{", "tabcolor", ":", $.space, $.text, "}"),
-    ),
-    labelfont_directive: ($) => seq("{", "labelfont", ":", $.space, $.text, "}"),
-    labelsize_directive: ($) => seq("{", "labelsize", ":", $.space, $.number, "}"),
-    labelcolour_directive: ($) => choice(
-      seq("{", "labelcolour", ":", $.space, $.text, "}"),
-      seq("{", "labelcolor", ":", $.space, $.text, "}"),
-    ),
-    tocfont_directive: ($) => seq("{", "tocfont", ":", $.space, $.text, "}"),
-    tocsize_directive: ($) => seq("{", "tocsize", ":", $.space, $.number, "}"),
-    toccolour_directive: ($) => choice(
-        seq("{", "toccolour", ":", $.space, $.text, "}"),
-        seq("{", "toccolor", ":", $.space, $.text, "}"),
+          $.diagrams_directive,
+          $.grid_directive,
+          $.no_grid_directive,
+          $.titles_directive,
+          $.columns_directive,
+        ),
+        "}",
       ),
-    textfont_directive: ($) => seq("{", "textfont", ":", $.space, $.text, "}"),
-    textsize_directive: ($) => seq("{", "textsize", ":", $.space, $.number, "}"),
-    textcolour_directive: ($) => choice(
-      seq("{", "textcolour", ":", $.space, $.text, "}"),
-      seq("{", "textcolor", ":", $.space, $.text, "}"),
-    ),
-    titlefont_directive: ($) => seq("{", "titlefont", ":", $.space, $.text, "}"),
-    titlesize_directive: ($) => seq("{", "titlesize", ":", $.space, $.number, "}"),
-    titlecolour_directive: ($) => choice(
-      seq("{", "titlecolour", ":", $.space, $.text, "}"),
-      seq("{", "titlecolor", ":", $.space, $.text, "}"),
-    ),
 
-    new_page_directive: ($) => choice(
-      seq("{", "new_page", "}"),
-      seq("{", "np", "}"),
-    ),
-    new_physic_page_directive: ($) => choice(
-      seq("{", "new_physical_page", "}"),
-      seq("{", "npp", "}"),
-    ),
-    column_break_directive: ($) => choice(
-      seq("{", "column_break", "}"),
-      seq("{", "colb", "}"),
-    ),
-    pagetype_directive: ($) => seq("{", "pagetype", ":", $.space, $.text, "}"),
+    incomplete_directive: ($) =>
+      seq("{", optional(token(prec(-1, /[^}\r\n]{0,100}/)))),
 
-    diagrams_directive: ($) => seq("{", "diagrams", ":", $.space, $.text, "}"),
-    grid_directive: ($) => seq("{", "grid", "}"),
-    no_grid_directive: ($) => seq("{", "no_grid", "}"),
-    titles_directive: ($) => seq("{", "titles", ":", $.space, $.titles_option, "}"),
+    title_directive: ($) =>
+      choice(seq("title", ":", $.bounded_text), seq("t", ":", $.bounded_text)),
+    subtitle_directive: ($) =>
+      choice(
+        seq("subtitle", ":", $.bounded_text),
+        seq("st", ":", $.bounded_text),
+      ),
+    artist_directive: ($) => seq("artist", ":", $.bounded_text),
+    composer_directive: ($) => seq("composer", ":", $.bounded_text),
+    lyricist_directive: ($) => seq("lyricist", ":", $.bounded_text),
+    copyright_directive: ($) => seq("copyright", ":", $.bounded_text),
+    album_directive: ($) => seq("album", ":", $.bounded_text),
+    year_directive: ($) => seq("year", ":", $.number),
+    key_directive: ($) => seq("key", ":", $.bounded_text),
+    time_directive: ($) => seq("time", ":", $.bounded_text),
+    tempo_directive: ($) => seq("tempo", ":", $.bounded_text),
+    duration_directive: ($) =>
+      choice(
+        seq("duration", ":", $.bounded_text),
+        seq("duration", ":", $.number),
+      ),
+    capo_directive: ($) => seq("capo", ":", $.number),
+    tag_directive: ($) => seq("tag", ":", $.bounded_text),
+    meta_directive: ($) => seq("meta", ":", $.bounded_text),
 
-    columns_directive: ($) => choice(
-      seq("{", "columns", ":", $.space, $.number, "}"),
-      seq("{", "col", ":", $.space, $.number, "}"),
-    ),
+    comment_directive: ($) =>
+      choice(
+        seq("comment", ":", $.bounded_text),
+        seq("c", ":", $.bounded_text),
+      ),
+    highlight_directive: ($) => seq("highlight", ":", $.bounded_text),
+    comment_italic_directive: ($) =>
+      choice(
+        seq("comment_italic", ":", $.bounded_text),
+        seq("ci", ":", $.bounded_text),
+      ),
+    comment_box_directive: ($) =>
+      choice(
+        seq("comment_box", ":", $.bounded_text),
+        seq("cb", ":", $.bounded_text),
+      ),
+    image_directive: ($) => seq("image", ":", $.bounded_text),
 
-    text: () => /[^{}]+/,
-    number: () => /\d+/,
-    space: () => /\s/,
+    chorus_directive: ($) =>
+      choice("chorus", seq("chorus", ":", $.bounded_text)),
+    start_of_chorus_directive: ($) =>
+      choice(
+        "start_of_chorus",
+        seq("start_of_chorus", ":", $.bounded_text),
+        "soc",
+        seq("soc", ":", $.bounded_text),
+      ),
+    end_of_chorus_directive: ($) => choice("end_of_chorus", "eoc"),
 
-    chord_name: () => /\S+/,
-    fret_sequence: () => /[\dxX\-N\s]+/,
-    finger_sequence: () => /[\d\-\s]+/,
-    titles_option: () => /left|right|center/,
+    start_of_verse_directive: ($) =>
+      choice(
+        "start_of_verse",
+        seq("start_of_verse", ":", $.bounded_text),
+        "sov",
+        seq("sov", ":", $.bounded_text),
+      ),
+    end_of_verse_directive: ($) => choice("end_of_verse", "eov"),
+
+    start_of_bridge_directive: ($) =>
+      choice(
+        "start_of_bridge",
+        seq("start_of_bridge", ":", $.bounded_text),
+        "sob",
+        seq("sob", ":", $.bounded_text),
+      ),
+    end_of_bridge_directive: ($) => choice("end_of_bridge", "eob"),
+
+    start_of_tab_directive: ($) =>
+      choice(
+        "start_of_tab",
+        seq("start_of_tab", ":", $.bounded_text),
+        "sot",
+        seq("sot", ":", $.bounded_text),
+      ),
+    end_of_tab_directive: ($) => choice("end_of_tab", "eot"),
+
+    start_of_grid_directive: ($) =>
+      choice(
+        "start_of_grid",
+        seq("start_of_grid", ":", $.bounded_text),
+        "sog",
+        seq("sog", ":", $.bounded_text),
+      ),
+    end_of_grid_directive: ($) => choice("end_of_grid", "eog"),
+
+    start_of_abc_directive: ($) =>
+      choice("start_of_abc", seq("start_of_abc", ":", $.bounded_text)),
+    end_of_abc_directive: ($) => "end_of_abc",
+    start_of_ly_directive: ($) =>
+      choice("start_of_ly", seq("start_of_ly", ":", $.bounded_text)),
+    end_of_ly_directive: ($) => "end_of_ly",
+    start_of_svg_directive: ($) => "start_of_svg",
+    end_of_svg_directive: ($) => "end_of_svg",
+    start_of_textblock_directive: ($) => "start_of_textblock",
+    end_of_textblock_directive: ($) => "end_of_textblock",
+
+    define_directive: ($) =>
+      seq(
+        "define",
+        ":",
+        $.chord_name,
+        "base-fret",
+        $.number,
+        "frets",
+        $.fret_sequence,
+        optional(seq("fingers", $.finger_sequence)),
+      ),
+    chord_directive: ($) =>
+      choice(
+        seq(
+          "chord",
+          ":",
+          $.chord_name,
+          "base-fret",
+          $.number,
+          "frets",
+          $.fret_sequence,
+          optional(seq("fingers", $.finger_sequence)),
+        ),
+        seq("chord", ":", $.chord_name),
+      ),
+
+    transpose_directive: ($) => seq("transpose", ":", $.bounded_text),
+
+    chordfont_directive: ($) => seq("chordfont", ":", $.bounded_text),
+    chordsize_directive: ($) => seq("chordsize", ":", $.number),
+    chordcolour_directive: ($) =>
+      choice(
+        seq("chordcolour", ":", $.bounded_text),
+        seq("chordcolor", ":", $.bounded_text),
+      ),
+    chorusfont_directive: ($) => seq("chorusfont", ":", $.bounded_text),
+    chorussize_directive: ($) => seq("chorussize", ":", $.number),
+    choruscolour_directive: ($) =>
+      choice(
+        seq("choruscolour", ":", $.bounded_text),
+        seq("choruscolor", ":", $.bounded_text),
+      ),
+    footerfont_directive: ($) => seq("footerfont", ":", $.bounded_text),
+    footersize_directive: ($) => seq("footersize", ":", $.number),
+    footercolour_directive: ($) =>
+      choice(
+        seq("footercolour", ":", $.bounded_text),
+        seq("footercolor", ":", $.bounded_text),
+      ),
+    gridfont_directive: ($) => seq("gridfont", ":", $.bounded_text),
+    gridsize_directive: ($) => seq("gridsize", ":", $.number),
+    gridcolour_directive: ($) =>
+      choice(
+        seq("gridcolour", ":", $.bounded_text),
+        seq("gridcolor", ":", $.bounded_text),
+      ),
+    tabfont_directive: ($) => seq("tabfont", ":", $.bounded_text),
+    tabsize_directive: ($) => seq("tabsize", ":", $.number),
+    tabcolour_directive: ($) =>
+      choice(
+        seq("tabcolour", ":", $.bounded_text),
+        seq("tabcolor", ":", $.bounded_text),
+      ),
+    labelfont_directive: ($) => seq("labelfont", ":", $.bounded_text),
+    labelsize_directive: ($) => seq("labelsize", ":", $.number),
+    labelcolour_directive: ($) =>
+      choice(
+        seq("labelcolour", ":", $.bounded_text),
+        seq("labelcolor", ":", $.bounded_text),
+      ),
+    tocfont_directive: ($) => seq("tocfont", ":", $.bounded_text),
+    tocsize_directive: ($) => seq("tocsize", ":", $.number),
+    toccolour_directive: ($) =>
+      choice(
+        seq("toccolour", ":", $.bounded_text),
+        seq("toccolor", ":", $.bounded_text),
+      ),
+    textfont_directive: ($) => seq("textfont", ":", $.bounded_text),
+    textsize_directive: ($) => seq("textsize", ":", $.number),
+    textcolour_directive: ($) =>
+      choice(
+        seq("textcolour", ":", $.bounded_text),
+        seq("textcolor", ":", $.bounded_text),
+      ),
+    titlefont_directive: ($) => seq("titlefont", ":", $.bounded_text),
+    titlesize_directive: ($) => seq("titlesize", ":", $.number),
+    titlecolour_directive: ($) =>
+      choice(
+        seq("titlecolour", ":", $.bounded_text),
+        seq("titlecolor", ":", $.bounded_text),
+      ),
+
+    new_page_directive: ($) => choice("new_page", "np"),
+    new_physic_page_directive: ($) => choice("new_physical_page", "npp"),
+    column_break_directive: ($) => choice("column_break", "colb"),
+    pagetype_directive: ($) => seq("pagetype", ":", $.bounded_text),
+
+    diagrams_directive: ($) => seq("diagrams", ":", $.bounded_text),
+    grid_directive: ($) => "grid",
+    no_grid_directive: ($) => "no_grid",
+    titles_directive: ($) => seq("titles", ":", $.titles_option),
+    columns_directive: ($) =>
+      choice(seq("columns", ":", $.number), seq("col", ":", $.number)),
+
+    bounded_text: ($) => token(prec(1, /[^{}\r\n]{1,200}/)),
+    number: ($) => token(/\d+/),
+
+    chord_name: ($) => token(/[^\s{}]{1,10}/),
+    fret_sequence: ($) => token(/[\dxX\-N\s]{1,50}/),
+    finger_sequence: ($) => token(/[\d\-\s]{1,20}/),
+    titles_option: ($) => token(choice("left", "right", "center")),
   },
 });

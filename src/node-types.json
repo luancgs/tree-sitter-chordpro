@@ -4,15 +4,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "space",
-          "named": true
-        },
-        {
-          "type": "text",
+          "type": "bounded_text",
           "named": true
         }
       ]
@@ -23,15 +19,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "space",
-          "named": true
-        },
-        {
-          "type": "text",
+          "type": "bounded_text",
           "named": true
         }
       ]
@@ -42,15 +34,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
           "type": "number",
-          "named": true
-        },
-        {
-          "type": "space",
           "named": true
         }
       ]
@@ -59,7 +47,21 @@
   {
     "type": "chord",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
+        {
+          "type": "chord_content",
+          "named": true
+        },
+        {
+          "type": "incomplete_chord",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "chord_directive",
@@ -84,10 +86,6 @@
         {
           "type": "number",
           "named": true
-        },
-        {
-          "type": "space",
-          "named": true
         }
       ]
     }
@@ -97,15 +95,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "space",
-          "named": true
-        },
-        {
-          "type": "text",
+          "type": "bounded_text",
           "named": true
         }
       ]
@@ -116,15 +110,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "space",
-          "named": true
-        },
-        {
-          "type": "text",
+          "type": "bounded_text",
           "named": true
         }
       ]
@@ -135,15 +125,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
           "type": "number",
-          "named": true
-        },
-        {
-          "type": "space",
           "named": true
         }
       ]
@@ -154,15 +140,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": false,
       "types": [
         {
-          "type": "space",
-          "named": true
-        },
-        {
-          "type": "text",
+          "type": "bounded_text",
           "named": true
         }
       ]
@@ -173,15 +155,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "space",
-          "named": true
-        },
-        {
-          "type": "text",
+          "type": "bounded_text",
           "named": true
         }
       ]
@@ -192,15 +170,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "space",
-          "named": true
-        },
-        {
-          "type": "text",
+          "type": "bounded_text",
           "named": true
         }
       ]
@@ -211,15 +185,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
           "type": "number",
-          "named": true
-        },
-        {
-          "type": "space",
           "named": true
         }
       ]
@@ -235,15 +205,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
           "type": "number",
-          "named": true
-        },
-        {
-          "type": "space",
           "named": true
         }
       ]
@@ -254,15 +220,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "space",
-          "named": true
-        },
-        {
-          "type": "text",
+          "type": "bounded_text",
           "named": true
         }
       ]
@@ -273,15 +235,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "space",
-          "named": true
-        },
-        {
-          "type": "text",
+          "type": "bounded_text",
           "named": true
         }
       ]
@@ -292,129 +250,18 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "space",
-          "named": true
-        },
-        {
-          "type": "text",
+          "type": "bounded_text",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "composer_directive",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "space",
-          "named": true
-        },
-        {
-          "type": "text",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "content_line",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "chord",
-          "named": true
-        },
-        {
-          "type": "lyric",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "copyright_directive",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "space",
-          "named": true
-        },
-        {
-          "type": "text",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "define_directive",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "chord_name",
-          "named": true
-        },
-        {
-          "type": "finger_sequence",
-          "named": true
-        },
-        {
-          "type": "fret_sequence",
-          "named": true
-        },
-        {
-          "type": "number",
-          "named": true
-        },
-        {
-          "type": "space",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "diagrams_directive",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": true,
-      "required": true,
-      "types": [
-        {
-          "type": "space",
-          "named": true
-        },
-        {
-          "type": "text",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
-    "type": "directive",
+    "type": "complete_directive",
     "named": true,
     "fields": {},
     "children": {
@@ -737,7 +584,56 @@
     }
   },
   {
-    "type": "duration_directive",
+    "type": "composer_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "bounded_text",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "content",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "directive",
+          "named": true
+        },
+        {
+          "type": "song_content",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "copyright_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "bounded_text",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "define_directive",
     "named": true,
     "fields": {},
     "children": {
@@ -745,24 +641,76 @@
       "required": true,
       "types": [
         {
+          "type": "chord_name",
+          "named": true
+        },
+        {
+          "type": "finger_sequence",
+          "named": true
+        },
+        {
+          "type": "fret_sequence",
+          "named": true
+        },
+        {
           "type": "number",
-          "named": true
-        },
-        {
-          "type": "space",
-          "named": true
-        },
-        {
-          "type": "text",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "end_of_abc_directive",
+    "type": "diagrams_directive",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "bounded_text",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "complete_directive",
+          "named": true
+        },
+        {
+          "type": "incomplete_directive",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "duration_directive",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "bounded_text",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "end_of_bridge_directive",
@@ -780,22 +728,7 @@
     "fields": {}
   },
   {
-    "type": "end_of_ly_directive",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "end_of_svg_directive",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "end_of_tab_directive",
-    "named": true,
-    "fields": {}
-  },
-  {
-    "type": "end_of_textblock_directive",
     "named": true,
     "fields": {}
   },
@@ -809,15 +742,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "space",
-          "named": true
-        },
-        {
-          "type": "text",
+          "type": "bounded_text",
           "named": true
         }
       ]
@@ -828,15 +757,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "space",
-          "named": true
-        },
-        {
-          "type": "text",
+          "type": "bounded_text",
           "named": true
         }
       ]
@@ -847,39 +772,26 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
           "type": "number",
-          "named": true
-        },
-        {
-          "type": "space",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "grid_directive",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "gridcolour_directive",
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "space",
-          "named": true
-        },
-        {
-          "type": "text",
+          "type": "bounded_text",
           "named": true
         }
       ]
@@ -890,15 +802,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "space",
-          "named": true
-        },
-        {
-          "type": "text",
+          "type": "bounded_text",
           "named": true
         }
       ]
@@ -909,15 +817,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
           "type": "number",
-          "named": true
-        },
-        {
-          "type": "space",
           "named": true
         }
       ]
@@ -928,15 +832,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "space",
-          "named": true
-        },
-        {
-          "type": "text",
+          "type": "bounded_text",
           "named": true
         }
       ]
@@ -947,34 +847,36 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "space",
-          "named": true
-        },
-        {
-          "type": "text",
+          "type": "bounded_text",
           "named": true
         }
       ]
     }
   },
   {
+    "type": "incomplete_chord",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "incomplete_directive",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "key_directive",
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "space",
-          "named": true
-        },
-        {
-          "type": "text",
+          "type": "bounded_text",
           "named": true
         }
       ]
@@ -985,15 +887,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "space",
-          "named": true
-        },
-        {
-          "type": "text",
+          "type": "bounded_text",
           "named": true
         }
       ]
@@ -1004,15 +902,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "space",
-          "named": true
-        },
-        {
-          "type": "text",
+          "type": "bounded_text",
           "named": true
         }
       ]
@@ -1023,15 +917,26 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
           "type": "number",
           "named": true
-        },
+        }
+      ]
+    }
+  },
+  {
+    "type": "line",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": false,
+      "types": [
         {
-          "type": "space",
+          "type": "content",
           "named": true
         }
       ]
@@ -1042,15 +947,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "space",
-          "named": true
-        },
-        {
-          "type": "text",
+          "type": "bounded_text",
           "named": true
         }
       ]
@@ -1061,15 +962,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "space",
-          "named": true
-        },
-        {
-          "type": "text",
+          "type": "bounded_text",
           "named": true
         }
       ]
@@ -1086,24 +983,15 @@
     "fields": {}
   },
   {
-    "type": "no_grid_directive",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "pagetype_directive",
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "space",
-          "named": true
-        },
-        {
-          "type": "text",
+          "type": "bounded_text",
           "named": true
         }
       ]
@@ -1119,30 +1007,26 @@
       "required": false,
       "types": [
         {
-          "type": "directive",
-          "named": true
-        },
-        {
-          "type": "song_line",
+          "type": "line",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "song_line",
+    "type": "song_content",
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
         {
-          "type": "content_line",
+          "type": "chord",
           "named": true
         },
         {
-          "type": "empty_line",
+          "type": "text_segment",
           "named": true
         }
       ]
@@ -1153,15 +1037,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": false,
       "types": [
         {
-          "type": "space",
-          "named": true
-        },
-        {
-          "type": "text",
+          "type": "bounded_text",
           "named": true
         }
       ]
@@ -1172,15 +1052,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": false,
       "types": [
         {
-          "type": "space",
-          "named": true
-        },
-        {
-          "type": "text",
+          "type": "bounded_text",
           "named": true
         }
       ]
@@ -1191,15 +1067,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": false,
       "types": [
         {
-          "type": "space",
-          "named": true
-        },
-        {
-          "type": "text",
+          "type": "bounded_text",
           "named": true
         }
       ]
@@ -1210,15 +1082,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": false,
       "types": [
         {
-          "type": "space",
-          "named": true
-        },
-        {
-          "type": "text",
+          "type": "bounded_text",
           "named": true
         }
       ]
@@ -1229,63 +1097,41 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": false,
       "types": [
         {
-          "type": "space",
-          "named": true
-        },
-        {
-          "type": "text",
+          "type": "bounded_text",
           "named": true
         }
       ]
     }
-  },
-  {
-    "type": "start_of_svg_directive",
-    "named": true,
-    "fields": {}
   },
   {
     "type": "start_of_tab_directive",
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": false,
       "types": [
         {
-          "type": "space",
-          "named": true
-        },
-        {
-          "type": "text",
+          "type": "bounded_text",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "start_of_textblock_directive",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "start_of_verse_directive",
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": false,
       "types": [
         {
-          "type": "space",
-          "named": true
-        },
-        {
-          "type": "text",
+          "type": "bounded_text",
           "named": true
         }
       ]
@@ -1296,15 +1142,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "space",
-          "named": true
-        },
-        {
-          "type": "text",
+          "type": "bounded_text",
           "named": true
         }
       ]
@@ -1315,15 +1157,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "space",
-          "named": true
-        },
-        {
-          "type": "text",
+          "type": "bounded_text",
           "named": true
         }
       ]
@@ -1334,15 +1172,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "space",
-          "named": true
-        },
-        {
-          "type": "text",
+          "type": "bounded_text",
           "named": true
         }
       ]
@@ -1353,15 +1187,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
           "type": "number",
-          "named": true
-        },
-        {
-          "type": "space",
           "named": true
         }
       ]
@@ -1372,15 +1202,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "space",
-          "named": true
-        },
-        {
-          "type": "text",
+          "type": "bounded_text",
           "named": true
         }
       ]
@@ -1391,15 +1217,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "space",
-          "named": true
-        },
-        {
-          "type": "text",
+          "type": "bounded_text",
           "named": true
         }
       ]
@@ -1410,15 +1232,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "space",
-          "named": true
-        },
-        {
-          "type": "text",
+          "type": "bounded_text",
           "named": true
         }
       ]
@@ -1429,15 +1247,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "space",
-          "named": true
-        },
-        {
-          "type": "text",
+          "type": "bounded_text",
           "named": true
         }
       ]
@@ -1448,15 +1262,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
           "type": "number",
-          "named": true
-        },
-        {
-          "type": "space",
           "named": true
         }
       ]
@@ -1467,15 +1277,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "space",
-          "named": true
-        },
-        {
-          "type": "text",
+          "type": "bounded_text",
           "named": true
         }
       ]
@@ -1486,15 +1292,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "space",
-          "named": true
-        },
-        {
-          "type": "text",
+          "type": "bounded_text",
           "named": true
         }
       ]
@@ -1505,15 +1307,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "space",
-          "named": true
-        },
-        {
-          "type": "text",
+          "type": "bounded_text",
           "named": true
         }
       ]
@@ -1524,15 +1322,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "space",
-          "named": true
-        },
-        {
-          "type": "text",
+          "type": "bounded_text",
           "named": true
         }
       ]
@@ -1543,13 +1337,9 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
-        {
-          "type": "space",
-          "named": true
-        },
         {
           "type": "titles_option",
           "named": true
@@ -1562,15 +1352,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
           "type": "number",
-          "named": true
-        },
-        {
-          "type": "space",
           "named": true
         }
       ]
@@ -1581,15 +1367,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "space",
-          "named": true
-        },
-        {
-          "type": "text",
+          "type": "bounded_text",
           "named": true
         }
       ]
@@ -1600,15 +1382,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "space",
-          "named": true
-        },
-        {
-          "type": "text",
+          "type": "bounded_text",
           "named": true
         }
       ]
@@ -1619,15 +1397,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
           "type": "number",
-          "named": true
-        },
-        {
-          "type": "space",
           "named": true
         }
       ]
@@ -1638,15 +1412,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
-          "type": "space",
-          "named": true
-        },
-        {
-          "type": "text",
+          "type": "bounded_text",
           "named": true
         }
       ]
@@ -1657,15 +1427,11 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": true,
+      "multiple": false,
       "required": true,
       "types": [
         {
           "type": "number",
-          "named": true
-        },
-        {
-          "type": "space",
           "named": true
         }
       ]
@@ -1696,6 +1462,10 @@
     "named": false
   },
   {
+    "type": "bounded_text",
+    "named": true
+  },
+  {
     "type": "c",
     "named": false
   },
@@ -1710,6 +1480,10 @@
   {
     "type": "chord",
     "named": false
+  },
+  {
+    "type": "chord_content",
+    "named": true
   },
   {
     "type": "chord_name",
@@ -1804,12 +1578,8 @@
     "named": false
   },
   {
-    "type": "empty_line",
+    "type": "end_of_abc_directive",
     "named": true
-  },
-  {
-    "type": "end_of_abc",
-    "named": false
   },
   {
     "type": "end_of_bridge",
@@ -1824,20 +1594,20 @@
     "named": false
   },
   {
-    "type": "end_of_ly",
-    "named": false
+    "type": "end_of_ly_directive",
+    "named": true
   },
   {
-    "type": "end_of_svg",
-    "named": false
+    "type": "end_of_svg_directive",
+    "named": true
   },
   {
     "type": "end_of_tab",
     "named": false
   },
   {
-    "type": "end_of_textblock",
-    "named": false
+    "type": "end_of_textblock_directive",
+    "named": true
   },
   {
     "type": "end_of_verse",
@@ -1896,8 +1666,8 @@
     "named": false
   },
   {
-    "type": "grid",
-    "named": false
+    "type": "grid_directive",
+    "named": true
   },
   {
     "type": "gridcolor",
@@ -1944,10 +1714,6 @@
     "named": false
   },
   {
-    "type": "lyric",
-    "named": true
-  },
-  {
     "type": "lyricist",
     "named": false
   },
@@ -1964,8 +1730,8 @@
     "named": false
   },
   {
-    "type": "no_grid",
-    "named": false
+    "type": "no_grid_directive",
+    "named": true
   },
   {
     "type": "np",
@@ -2004,11 +1770,6 @@
     "named": false
   },
   {
-    "type": "space",
-    "named": true,
-    "extra": true
-  },
-  {
     "type": "st",
     "named": false
   },
@@ -2033,16 +1794,16 @@
     "named": false
   },
   {
-    "type": "start_of_svg",
-    "named": false
+    "type": "start_of_svg_directive",
+    "named": true
   },
   {
     "type": "start_of_tab",
     "named": false
   },
   {
-    "type": "start_of_textblock",
-    "named": false
+    "type": "start_of_textblock_directive",
+    "named": true
   },
   {
     "type": "start_of_verse",
@@ -2081,7 +1842,7 @@
     "named": false
   },
   {
-    "type": "text",
+    "type": "text_segment",
     "named": true
   },
   {
