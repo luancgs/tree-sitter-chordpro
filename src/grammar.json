@@ -1332,8 +1332,11 @@
       ]
     },
     "end_of_abc_directive": {
-      "type": "STRING",
-      "value": "end_of_abc"
+      "type": "TOKEN",
+      "content": {
+        "type": "STRING",
+        "value": "end_of_abc"
+      }
     },
     "start_of_ly_directive": {
       "type": "CHOICE",
@@ -1362,24 +1365,39 @@
       ]
     },
     "end_of_ly_directive": {
-      "type": "STRING",
-      "value": "end_of_ly"
+      "type": "TOKEN",
+      "content": {
+        "type": "STRING",
+        "value": "end_of_ly"
+      }
     },
     "start_of_svg_directive": {
-      "type": "STRING",
-      "value": "start_of_svg"
+      "type": "TOKEN",
+      "content": {
+        "type": "STRING",
+        "value": "start_of_svg"
+      }
     },
     "end_of_svg_directive": {
-      "type": "STRING",
-      "value": "end_of_svg"
+      "type": "TOKEN",
+      "content": {
+        "type": "STRING",
+        "value": "end_of_svg"
+      }
     },
     "start_of_textblock_directive": {
-      "type": "STRING",
-      "value": "start_of_textblock"
+      "type": "TOKEN",
+      "content": {
+        "type": "STRING",
+        "value": "start_of_textblock"
+      }
     },
     "end_of_textblock_directive": {
-      "type": "STRING",
-      "value": "end_of_textblock"
+      "type": "TOKEN",
+      "content": {
+        "type": "STRING",
+        "value": "end_of_textblock"
+      }
     },
     "define_directive": {
       "type": "SEQ",
