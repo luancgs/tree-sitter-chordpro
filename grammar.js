@@ -232,14 +232,14 @@ module.exports = grammar({
 
     start_of_abc_directive: ($) =>
       choice("start_of_abc", seq("start_of_abc", ":", $.bounded_text)),
-    end_of_abc_directive: ($) => token("end_of_abc"),
+    end_of_abc_directive: ($) => "end_of_abc",
     start_of_ly_directive: ($) =>
       choice("start_of_ly", seq("start_of_ly", ":", $.bounded_text)),
-    end_of_ly_directive: ($) => token("end_of_ly"),
-    start_of_svg_directive: ($) => token("start_of_svg"),
-    end_of_svg_directive: ($) => token("end_of_svg"),
-    start_of_textblock_directive: ($) => token("start_of_textblock"),
-    end_of_textblock_directive: ($) => token("end_of_textblock"),
+    end_of_ly_directive: ($) => "end_of_ly",
+    start_of_svg_directive: ($) => "start_of_svg",
+    end_of_svg_directive: ($) => "end_of_svg",
+    start_of_textblock_directive: ($) => "start_of_textblock",
+    end_of_textblock_directive: ($) => "end_of_textblock",
 
     define_directive: ($) =>
       seq(
